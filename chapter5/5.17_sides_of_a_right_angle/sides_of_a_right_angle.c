@@ -1,14 +1,9 @@
 /*Write a function that reads three nonzero integers and determines whether they are the sides of a right-angled triangle. The function should take three integer
-arguments and return 1 (true) if the arguments comprise a right-angled triangle, and 0 (false) otherwise. Use this function in a program that inputs a series of sets of integers.*/
-
+arguments and return 1 (true) if the arguments comprise a right-angled triangle, and 0 (false) otherwise. Use this function in a program that input a series of sets of integers.*/
 #include <stdio.h>
 #include <math.h>
-
-//FUNCTION PROTOTYPE
-int SidesOfRightTriangle(int side1, int side2, int side3);
-
 //FUNCTION DEFINITION
-int SidesOfRightTriangle(int side1, int side2, int side3){
+int sidesOfRightTriangle(int side1, int side2, int side3){
     if( (side1*side1) == side2*side2 + side3*side3){
         return 1; //it is a right angle triangle
     }
@@ -23,42 +18,37 @@ int SidesOfRightTriangle(int side1, int side2, int side3){
     }
 }
 
+int a, b, c, triangleNo = 0;
+    
+void input1(){
+    triangleNo++;
+    printf("TRIANGLE #%d\n", triangleNo);
+    printf("Enter side #1 (-1 to quit): ");
+    scanf("%d", &a);
+} 
+void input2And3(){
+    printf("Enter side #2: ");
+    scanf("%d", &b);
+    printf("Enter side #3: ");
+    scanf("%d", &c);
+} 
 int main(void){
-
-    int a, b, c;
-    int triangleNo = 1;
-    printf("Triangle #%d\n", triangleNo);
-    printf("Enter three sides of triangle in question(Input 0 for all sides to quit): ");
-    scanf("%d%d%d", &a,&b, &c);
-
-    while(a!=0 || b!=0 || c!=0){ //while none of the sides is equal to 0
-        
-        while(a<=0 || b<=0 || c<=0){ //If user inputs wrong value for length of sides
-                puts("INVALID input!!!!Length of sides must be a  positive integer\n");
-                printf("Enter three sides of triangle in question(Input 0 for all sides to quit): ");
-                scanf("%d%d%d", &a,&b, &c);
-                if(a==0 && b==0 && c==0){  //when user enters 0 0 0, it breaks out of this while loop
-                break;
-                } //End if
+    input1();
+    while(a!=-1){ //while first sides is not equal to -1
+    input2And3();
+        while(a<=0 || b<=0 || c<=0){ //If user input wrong value for length of sides
+                puts("\tINVALID input!! Length of sides 2 and 3 must be positive integers");
+                triangleNo--;
+                input2And3();
             } //End while
-
-        if(a==0 && b==0 & c==0){  //when user enters 0 0 0, it breaks out of the overall while loop
-            break;
-        }//End if
-
-        //Test for right angled triangle
-        int isRightAngleTriangle = SidesOfRightTriangle(a, b, c);
-
+        int isRightAngleTriangle = sidesOfRightTriangle(a, b, c); //Test for right angled triangle
         if( isRightAngleTriangle == 1){ //if isRightAngleTriangle is true
-            printf("Triangle #%d is a right angle triangle.\n", triangleNo);
+            printf("%d, %d and %d MAKE a right-angled triangle.\n", a,b,c); //The 3 sides make a right-angled triangle
         }
         else{//if isRightAngleTriangle is false
-            printf("Triangle #%d is not a right angle triangle.\n", triangleNo);
+            printf("%d, %d and %d DOESN'T make a right-angled triangle.\n", a,b,c); //The 3 sides doesn't make a right-angled triangle
         }
-
-        triangleNo++; 
-        printf("\nTriangle #%d\n", triangleNo);
-        printf("Enter three sides of triangle in question(Input 0 for all sides to quit): ");
-        scanf("%d%d%d", &a,&b, &c);
+        puts("");
+       input1();
     } //End while
 } //End function main
