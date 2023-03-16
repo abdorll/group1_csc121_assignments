@@ -23,9 +23,9 @@ int main() {
     scanf("%lf", &x);
     
     printf("Original value: %lf\n", x);
-    printf("Rounded to integer: %.0f\n", roundToInteger(x));
-    printf("Rounded to tenths: %.1f\n", roundToTenths(x));
-    printf("Rounded to hundredths: %.2f\n", roundToHundredths(x));
+    printf("Rounded to integer: %f\n", roundToInteger(x));
+    printf("Rounded to tenths: %f\n", roundToTenths(x));
+    printf("Rounded to hundredths: %f\n", roundToHundredths(x));
     printf("Rounded to thousandths: %f\n", roundToThousandths(x));
     
     return 0;
