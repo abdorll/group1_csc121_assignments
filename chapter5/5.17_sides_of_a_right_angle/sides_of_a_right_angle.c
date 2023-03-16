@@ -3,18 +3,20 @@
 int squareNum(int number){
     return number*number;
 }
-bool determineRightAngle(int sidea, int sideb,int sidec){ 
-    return squareNum(sidea)+squareNum(sideb)==squareNum(sidec);
+int determineRightAngle(int sideA, int sideB,int sideC){ 
+    return squareNum(sideA)+squareNum(sideB)==squareNum(sideC)?1:0;
 }
-
 int side1, side2, side3 =0;
 int setIndex=0;
-int main(){
+void input(){
     setIndex++;
     printf("NUMBER SET #%d", setIndex);
     puts("");
-    printf("Enter side #1 ");
+    printf("Enter side #1 (-1 to quit) ");
     scanf("%d", &side1);
+}
+int main(){
+    input();
     while(side1 !=-1){
     printf("Enter side #2 ");
     scanf("%d", &side2);
@@ -25,11 +27,7 @@ int main(){
     determineRightAngle(side1, side3, side2))==true?
    "%d, %d and %d MAKE a right-angled triangle": "%d, %d and %d DOESN'T make a right-angled triangle", side1, side2, side3);
     puts("\n");
-    setIndex++;
-    printf("NUMBER SET #%d", setIndex);
-    puts("");
-    printf("Enter side #1 ");
-    scanf("%d", &side1);
+    input();
     }
     return 0;
 }

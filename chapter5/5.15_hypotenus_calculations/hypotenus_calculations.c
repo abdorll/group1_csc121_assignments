@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <math.h>
 double opposite, adjacent, hypotenuse;
 void determineHypotenuse(double opposite, double adjacent){
-hypotenuse = opposite*opposite + adjacent*adjacent;
-opposite<=0||adjacent<=0? puts("Enter valid lengths"): printf("Hypotenuse is: %lf \n", hypotenuse);
+hypotenuse = sqrt(pow(opposite,2) + pow(adjacent,2));
+opposite<=0||adjacent<=0? puts("Enter valid lengths"): printf("Hypotenuse is: %.2lf \n", hypotenuse);
 }
 int index =0;
 void input1(){
@@ -17,6 +18,6 @@ int main() {
     determineHypotenuse(adjacent, opposite);
     puts("");
     input1();
-    }    
+    }
     return 0;
 }

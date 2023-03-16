@@ -20,15 +20,22 @@ void rectangle(int width, int height,char character){
    }
     }  
 }
-int main(){
+
 int width, height;
+void input(){
+    printf("Enter side #1 (width) [-1 to quit]: ");
+scanf("%d",&width);
+}
+int main(){
 char character = "*";
 printf("Enter character: ");
 scanf("%c",&character);
-printf("Enter side #1 (width): ");
-scanf("%d",&width);
+input();
+while(width!=-1){
 printf("Enter side #1 (height): ");
 scanf("%d",&height);
-rectangle(width, height, character);
-    return 0;
+rectangle(width, height,character);
+input();
+}
+ return 0;
 }

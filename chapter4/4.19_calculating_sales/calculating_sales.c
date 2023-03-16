@@ -45,4 +45,3 @@ int main(void){
     }
     printf("\nTotal retail value for one week : $ %.2f", totalRetailValue);
 }
-
