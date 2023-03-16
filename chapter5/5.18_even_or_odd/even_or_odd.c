@@ -11,7 +11,6 @@ int evenOrOdd (int num){
 int x, index=0;
 void input(){
     index++;
-    puts(""); // creates single line space, similar to \n
     printf("EVEN OR ODD #%d\n", index);
     printf("Enter a number(0 to quit): ");
     scanf("%d", &x);
