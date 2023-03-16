@@ -1,41 +1,30 @@
 #include <stdio.h> 
-void rectangleTopAndBottom(int width,char character){
+void rectangleWidth(int width,char character){ //prints character (in row format) based on width numb.
     for (int i=0; i<width ; i++){
-        printf("%c ", character);
+        printf("%c ", character); // character will be parsed-in in the main func.
     }
     puts("");
 }
-void rectangleBody(int width, char character){
-    for (int i=0; i<width ; i++){
-        printf(i==0||i==width-1? "%c ": "  ", character);
-    }
-    puts("");
-}
-void rectangle(int width, int height,char character){
+void rectangleHeight(int width, int height,char character){ //prints gotten width (No. of height times); forming the rectangle
   for (int i=0; i<height ; i++){
-      if (i==0||i==height-1){
-        rectangleTopAndBottom(width, character );
-   }   else{
-    rectangleBody(width, character);
-   }
+    rectangleWidth(width, character ); // character will be parsed-in in the main func.
     }  
 }
-
 int width, height;
-void input(){
-    printf("Enter side #1 (width) [-1 to quit]: ");
+void enterWidth(){
+    printf("Enter side #1 (width) [-1 to quit]: "); //first get rectangle width
 scanf("%d",&width);
 }
 int main(){
-char character = "*";
-printf("Enter character: ");
-scanf("%c",&character);
-input();
+char character = "*"; //create variable that stores the character
+printf("Enter character: "); 
+scanf("%c",&character); //get/store variable that stores the character
+enterWidth();
 while(width!=-1){
-printf("Enter side #1 (height): ");
+printf("Enter side #2 (height): ");  // now get rectangle height
 scanf("%d",&height);
-rectangle(width, height,character);
-input();
+rectangleHeight(width, height,character); //parse width, height & gotten character to form rectangle
+enterWidth();
 }
- return 0;
+return 0;
 }

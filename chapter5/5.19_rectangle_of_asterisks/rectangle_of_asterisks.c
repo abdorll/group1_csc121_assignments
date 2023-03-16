@@ -1,37 +1,27 @@
 #include <stdio.h>
-void rectangleTopAndBottom(int width){
+void rectangleWidth(int width){ //prints character (in row format) based on width numb.
     for (int i=0; i<width ; i++){
         printf("* ");
     }
     puts("");
 }
-void rectangleBody(int width){
-    for (int i=0; i<width ; i++){
-        printf(i==0||i==width-1? "* ": "  ");
-    }
-    puts("");
-}
-void rectangle(int width, int height){
+void rectangleHeight(int width, int height){ //prints gotten width (No. of height times); forming the rectangle
   for (int i=0; i<height ; i++){
-      if (i==0||i==height-1){
-        rectangleTopAndBottom(width);
-   }   else{
-    rectangleBody(width);
-   }
+      rectangleWidth(width);
     }  
 }
 int width, height;
-void input(){
-    printf("Enter side #1 (width) [-1 to quit]: ");
+void enterWidth(){
+printf("Enter side #1 (width) [-1 to quit]: "); //first get rectangle width 
 scanf("%d",&width);
 }
 int main(){
-input();
+enterWidth();
 while(width!=-1){
-printf("Enter side #1 (height): ");
+printf("Enter side #2 (height): "); // now get rectangle height
 scanf("%d",&height);
-rectangle(width, height);
-input();
+rectangleHeight(width, height); //parse width & height to form rectangle
+enterWidth();
 }
  return 0;
 }
