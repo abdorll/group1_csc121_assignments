@@ -1,0 +1,32 @@
+Paul Dietel C-How to Program, Chapter5, Exercise 5.12
+Structure and Functions in C
+
+QUESTIONS
+---------
+
+a) What is the difference between passing arguments by arguments and passing arguments by reference?
+
+b) What values does the rand() function generate?
+
+c) How do you randomize a program? How do you scale or shift the values produced by the rand function?
+
+d) What is a recursive function? What is a base case?
+
+
+ANSWERS
+-------
+
+a) The difference between pass-by-reference and pass-by-argument is that;
+   modifications made to arguments passed in by reference in the called function have effect in the calling function,
+   whereas modifications made to arguments passed in by argument in the called function can not affect the calling function.
+
+b) The rand() function generates a pseudo-random integer in the range 0 to RAND_MAX
+
+
+c) A program can be randomized using the rand() and srand() function.
+   Scaling a random number as an integer value between 1 and N may be accomplished by using the expression rand() % N + 1
+   or 1 + rand() % N. For example, 1 + rand() % 6 will produce a random number between 1 and 6.
+
+
+d)  A recursive function can be defined as a routine that calls itself directly or indirectly.
+    A base case is the part of a recursive definition or algorithm that is not defined in terms of itself.
