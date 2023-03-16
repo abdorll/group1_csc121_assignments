@@ -1,26 +1,48 @@
-#include <stdio.h>
+// Paul Dietel C-How to program: Chapter4, Exercise 4.19
+// Program control in C
 
-int main(){
-    int nums[5];
-    int input=0;
-    for (int i = 0; i < 5; i++){
-    printf("Enter number #%d: ", i+1);
-    scanf("%d", &input);
-    while(input<0||input>30){
-    puts("🛑❗Input must be within 0-30❗🛑"); 
-    printf("Enter number #%d: ", i+1);
-    scanf("%d", &input);
-    } 
-    nums[i] = input;
-    }
- puts(""); 
-  puts("BAR CHART");
-    for (int i = 0; i < 5; i++){
-      nums[i]<10?printf("0%d: ",nums[i]):printf("%d: ",nums[i]);
-        for(int j = 0; j <nums[i]; j++){
-            printf("*");
-        }
-        puts("");
-    }
-    return 0;
-}
+#include <stdio.h>
+// Function main - Code entry point
+int main (void) {
+
+	// Initializtion phase
+	// Variable declaration
+	int number[5];
+	int input;
+
+	for (int i = 0; i < 5; i++) {
+
+		printf("Enter number #%d: ", i+1);
+		scanf("%d", &input);
+
+		while (input < 1 || input > 30) {
+			puts("Input must be within 1-30!");
+			printf("Enter number #%d: ", i+1);
+			scanf("%d", &input);
+
+		} // End while
+
+		number[i] = input;
+
+	} // End for
+
+	puts("");
+	puts("BAR CHART");
+
+	for (int i = 0; i < 5; i++) {
+
+		printf("%2d: ", number[i]);
+
+		for (int j = 0; j < number[i]; j++) {
+
+			printf("*");
+
+		} // End for
+
+		puts("");
+
+	} // End for
+
+	return(0);
+
+} // End function main
