@@ -16,7 +16,7 @@ struct Customer allCustomersList[3]; // create an array (list) of len. 3 that ho
         scanf("%d",&previousCreditLimit); // get current customer's index account previous credit limit
         printf("Enter current balance: \n");
         scanf("%d",&currentBalance); // get current customer's index current balance
-        //---------------------------Below code (assigns customer details gotten from above to customer at current index into the array of all customers' at the current index)
+        //THE BELOW CODE (ASSIGNS CUSTOMER DETAILS GOTTEN FROM ABOVE TO CUSTOMER AT CURRENT INDEX INTO THE ARRAY OF ALL CUSTOMERS' AT THE CURRENT INDEX)
         allCustomersList[i].accountNumber=accountNumber; //assigns customer at current index's account number to the array of all customers account no. at the current index
         allCustomersList[i].previousCreditLimit=previousCreditLimit; //assigns customer at current index's prev. credit limit to the array of all customers' prev. credit limit at the current index
         allCustomersList[i].currentBalance=currentBalance; //assigns customer at current index's curr. bal. to the array of all customers' curr.bal. at the current index
