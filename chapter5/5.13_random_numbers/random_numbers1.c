@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h> // generates func. to generate rand. numb. with
 #include <time.h> //allows to generate rand func. in realtime
-int yesOrNo = 1;
+int wantToContinue = 1;
 int counter =0;
 void askToGenerateRandomNumber(){
   counter ++;
     printf("RANDOM NUMBERS IN RANGE #%d\n", counter);
   printf("Begin generating Random Numbers (1=yes, 0=no): ");
-  scanf("%d", &yesOrNo);
+  scanf("%d", &wantToContinue);
 }
 int main(void) { // Function main - Code entry point
   srand(time(NULL));
   askToGenerateRandomNumber();
-  while(yesOrNo==1){
+  while(wantToContinue==1){
   int n; // Variable declaration
   // 1 <= n <= 6
   puts("Random Number Between: ");
